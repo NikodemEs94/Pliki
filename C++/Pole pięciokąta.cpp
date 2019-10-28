@@ -1,0 +1,66 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+	double ab,bc,cd,de,ea,ad,bd;
+	double xa,ya,xb,yb,xc,yc,xd,yd,xe,ye;
+	cout<<"Zadanie 6"<<endl<<endl;
+	cout<<"Oblicz pole pieciokata na podstawie podanych wspolrzednych: A(1,1) B(2,8) C(4,11) D(7,9) E(10,3). Wpisz te wspolrzedne ponizej (UWAGA: aby program obliczyl pole dowolnego pieciokata, nalezy wspolrzedne podawac tak, aby powstala figura miala katy mniejsze lub rowne 180 stopni):"<<endl<<endl;
+	cout<<"Podaj wspolrzedne x pktu A (xa): ";
+	cin>>xa;
+	cout<<"Podaj wspolrzedne y pktu A (ya): ";
+	cin>>ya;
+	cout<<endl;
+	cout<<"Podaj wspolrzedne x pktu B (xb): ";
+	cin>>xb;
+	cout<<"Podaj wspolrzedne y pktu B (yb): ";
+	cin>>yb;
+	cout<<endl;
+	cout<<"Podaj wspolrzedne x pktu C (xc): ";
+	cin>>xc;
+	cout<<"Podaj wspolrzedne y pktu C (yc): ";
+	cin>>yc;
+	cout<<endl;
+	cout<<"Podaj wspolrzedne x pktu D (xd): ";
+	cin>>xd;
+	cout<<"Podaj wspolrzedne y pktu D (yd): ";
+	cin>>yd;
+	cout<<endl;
+	cout<<"Podaj wspolrzedne x pktu E (xe): ";
+	cin>>xe;
+	cout<<"Podaj wspolrzedne y pktu E (ye): ";
+	cin>>ye;
+	cout<<endl;
+	cout<<"A="<<"("<<xa<<","<<ya<<")"<<endl;
+	cout<<"B="<<"("<<xb<<","<<yb<<")"<<endl;
+	cout<<"C="<<"("<<xc<<","<<yc<<")"<<endl;
+	cout<<"D="<<"("<<xd<<","<<yd<<")"<<endl;
+	cout<<"E="<<"("<<xe<<","<<ye<<")"<<endl<<endl;
+	cout<<"Obliczamy dlugosci potrzebnych nam odcinkow na podstawie wspolrzednych:"<<endl<<endl;
+	cout<<"Dlugosc boku AB=sqrt((xb-xa)^2+(yb-ya)^2)= "<<sqrt((xb-xa)*(xb-xa)+(yb-ya)*(yb-ya))<<endl;
+	cout<<"Dlugosc boku BC=sqrt((xc-xb)^2+(yc-yb)^2)= "<<sqrt((xc-xb)*(xc-xb)+(yc-yb)*(yc-yb))<<endl;
+	cout<<"Dlugosc boku CD=sqrt((xd-xc)^2+(yd-yc)^2)= "<<sqrt((xd-xc)*(xd-xc)+(yd-yc)*(yd-yc))<<endl;
+	cout<<"Dlugosc boku DE=sqrt((xe-xd)^2+(ye-yd)^2)= "<<sqrt((xe-xd)*(xe-xd)+(ye-yd)*(ye-yd))<<endl;
+	cout<<"Dlugosc boku EA=sqrt((xa-xe)^2+(ya-ye)^2)= "<<sqrt((xa-xe)*(xa-xe)+(ya-ye)*(ya-ye))<<endl;
+	cout<<"Dlugosc boku AD=sqrt((xd-xa)^2+(yd-ya)^2)= "<<sqrt((xd-xa)*(xd-xa)+(yd-ya)*(yd-ya))<<endl;
+	cout<<"Dlugosc boku DB=sqrt((xb-xd)^2+(yb-yd)^2)= "<<sqrt((xb-xd)*(xb-xd)+(yb-yd)*(yb-yd))<<endl;
+	double AB=sqrt((xb-xa)*(xb-xa)+(yb-ya)*(yb-ya)), AD=sqrt((xd-xa)*(xd-xa)+(yd-ya)*(yd-ya)), DB=sqrt((xb-xd)*(xb-xd)+(yb-yd)*(yb-yd)), EA=sqrt((xa-xe)*(xa-xe)+(ya-ye)*(ya-ye)), CD=sqrt((xc-xb)*(xc-xb)+(yc-yb)*(yc-yb)), BC=sqrt((xc-xb)*(xc-xb)+(yc-yb)*(yc-yb)), DE=sqrt((xe-xd)*(xe-xd)+(ye-yd)*(ye-yd));
+	cout<<endl;
+	cout<<"Ze wzoru Herona obliczamy pola trojkatow, ktore powstaly w wyniku podzialu pieciokata."<<endl<<endl;
+	cout<<"Obliczamy pole trojkata ADE:"<<endl;
+	cout<<"Pole ADE="<<sqrt((0.5*(AD+DE+EA))*(((0.5*(AD+DE+EA))-AD)*(((0.5*(AD+DE+EA))-DE)*(((0.5*(AD+DE+EA)))-EA))))<<endl;
+	cout<<"Obliczamy pole trojkata ADB:"<<endl;
+	cout<<"Pole ADB="<<sqrt((0.5*(AD+DB+AB))*(((0.5*(AD+DB+AB))-AD)*(((0.5*(AD+DB+AB))-DB)*(((0.5*(AD+DB+AB)))-AB))))<<endl;
+	cout<<"Obliczamy pole trojkata BDC:"<<endl;
+	cout<<"Pole BDC="<<sqrt((0.5*(DB+CD+BC))*(((0.5*(DB+CD+BC))-DB)*(((0.5*(DB+CD+BC))-CD)*(((0.5*(DB+CD+BC)))-BC))))<<endl;
+	double ADE=sqrt((0.5*(AD+DE+EA))*(((0.5*(AD+DE+EA))-AD)*(((0.5*(AD+DE+EA))-DE)*(((0.5*(AD+DE+EA)))-EA))));
+	double ADB=sqrt((0.5*(AD+DB+AB))*(((0.5*(AD+DB+AB))-AD)*(((0.5*(AD+DB+AB))-DB)*(((0.5*(AD+DB+AB)))-AB))));
+	double BDC=sqrt((0.5*(DB+CD+BC))*(((0.5*(DB+CD+BC))-DB)*(((0.5*(DB+CD+BC))-CD)*(((0.5*(DB+CD+BC)))-BC))));
+	cout<<endl;
+	cout<<"Sumujemy wyliczone pola trojkatow:"<<endl;
+	cout<<"ADE+ADB+BDC="<<ADE+ADB+BDC<<endl;
+	cout<<endl;
+	cout<<"Odpowiedz: Pole pieciokata wynosi "<<ADE+ADB+BDC<<endl;
+	return 0;
+}
