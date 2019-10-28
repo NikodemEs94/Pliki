@@ -1,0 +1,28 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+public class DbUtils {
+		
+	public static TableModel resultSetToTableModel(ResultSet rs) throws SQLException {
+		// TODO Auto-generated method stub
+		
+		Object[][] tab=new Object[1][1];
+		ArrayList<Object[]> dane=new ArrayList<>();
+		int kolumny=rs.getMetaData().getColumnCount();	
+		
+		String[] tab1 =new String[kolumny];
+		for(int i=0;i<kolumny;i++) tab1[i]=rs.getMetaData().getColumnName(i+1);
+		while(rs.next()) {
+			Object[] row=new Object[kolumny];
+			for(int i=0;i<kolumny;i++) row[i]=rs.getString(i+1);
+		   dane.add(row);				
+			}		
+		
+		return new DefaultTableModel(dane.toArray(tab),tab1);
+	}
+
+}

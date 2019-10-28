@@ -1,0 +1,47 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+public class Polaczenie {	    
+	  public static Connection dbConnector()  {
+	  
+	  try{ 
+	  Class.forName( "org.firebirdsql.jdbc.FBDriver"); 
+	  Connection connection = DriverManager.getConnection(
+	  "jdbc:firebirdsql://localhost:3050/C:/Users/Nikodem/Desktop/BazaDanych/BAZA222.GDB",
+	  "sysdba", "masterkey"); 
+	 
+	  return connection;
+	  
+	  } catch (ClassNotFoundException e) { 
+		 JOptionPane.showMessageDialog(null, e);
+	     return null; 
+	  }
+	  catch(SQLException e){
+		  return null;
+	  }
+	
+	  }
+
+}
+	  
+
+
+	  /*
+    Connection connection = null'
+    		
+	try
+	{
+		Class.forName("org.firebirdsql.jdbc.FBDriver");
+	} catch(ClassNotFoundException e1) {
+		e1.printStackTrace();
+	} try {
+		connection = DriverManager.getConnection("jdbc:firebirdsql://localhost:3050/C:/Users/Nikodem/Desktop/BazaDanych/BAZA222.GDB",
+		"sysdba", "masterkey");
+		
+	}  catch(SQLException e)  {
+
+	e.printStackTrace();
+}
+*/
+

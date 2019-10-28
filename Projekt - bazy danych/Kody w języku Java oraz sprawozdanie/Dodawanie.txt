@@ -1,0 +1,542 @@
+import java.awt.CardLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+public class Dodawanie extends JFrame implements ActionListener {
+
+	
+	private JPanel contentPane;
+	
+	JButton przycisk, przycisk2, przycisk3, przycisk4, przycisk5, DodajMarke, Widok;                                                                                                                       
+	JLabel wyswietl, wyswietl2, wyswietl3, wyswietl4;
+	JTextField wpiszNazwe, wpiszKraj, szukajMarki, wpisz4, wpisz5, wpisz6, wpisz7, wpisz8, jtfText1;
+	JTable TabelaProduktow, TabelaPodgrup, TabelaMarek, TabelaGrup;
+	
+	JScrollPane scrollPane, scrollPane2, scrollPane3, scrollPane4;
+	private JComboBox comboBox;
+	Connection connection = null;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Dodawanie dod = new Dodawanie();
+					dod.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	public void Produkty() {
+		try {
+
+			CallableStatement c = connection.prepareCall("{call PRODUKTY}"); 
+			ResultSet rs = c.executeQuery();
+			TabelaProduktow.setModel(DbUtils.resultSetToTableModel(rs));
+			TabelaProduktow.setEnabled(false);
+			rs.close();
+			c.close();
+
+		} catch (Exception ee) {
+			ee.printStackTrace();
+		}
+	}
+	
+	public void Podgrupy() {
+		try {
+
+			CallableStatement c = connection.prepareCall("{call PODGRUPY}"); 
+			ResultSet rs = c.executeQuery();
+			TabelaPodgrup.setModel(DbUtils.resultSetToTableModel(rs));
+			TabelaPodgrup.setEnabled(false);
+			rs.close();
+			c.close();
+
+		} catch (Exception ee) {
+			ee.printStackTrace();
+		}
+	}
+	
+	
+	
+	public void Marki() {
+		try {
+
+			CallableStatement c = connection.prepareCall("{call MARKI}"); 
+			ResultSet rs = c.executeQuery();
+			TabelaMarek.setModel(DbUtils.resultSetToTableModel(rs));
+			TabelaMarek.setEnabled(false);
+			rs.close();
+			c.close();
+
+		} catch (Exception ee) {
+			ee.printStackTrace();
+		}
+	}
+	
+	public void Grupy() {
+		try {
+
+			CallableStatement c = connection.prepareCall("{call GRUPY}"); 
+			ResultSet rs = c.executeQuery();
+			TabelaGrup.setModel(DbUtils.resultSetToTableModel(rs));
+			TabelaGrup.setEnabled(false);
+			rs.close();
+			c.close();
+
+		} catch (Exception ee) {
+			ee.printStackTrace();
+		}
+	}
+	
+	
+	String disp = "";
+	public static boolean liczba (String s)
+	{
+		try
+		{
+			double numer = Double.parseDouble(s);
+		}
+		catch(NumberFormatException n)
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	public static String czytaj (String s)
+	{
+		try
+		{
+			double numer = Double.parseDouble(s);
+		}
+		catch(NumberFormatException n)
+		{
+			return s;
+		}
+		return s;
+	}
+	
+	
+	
+	public Dodawanie()  {
+		
+		setSize(1240,740);
+	
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new CardLayout(0, 0));
+		
+		
+		setTitle("Sklep rowerowy");
+		setLayout(null);
+		
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(350, 30, 395, 300);
+		contentPane.add(scrollPane);
+		
+		scrollPane2 = new JScrollPane();
+		scrollPane2.setBounds(350, 360, 395, 300);
+		contentPane.add(scrollPane2);
+		
+		scrollPane3 = new JScrollPane();
+		scrollPane3.setBounds(785, 30, 395, 300);
+		contentPane.add(scrollPane3);
+		
+		scrollPane4 = new JScrollPane();
+		scrollPane4.setBounds(785, 360, 395, 300);
+		contentPane.add(scrollPane4);
+		
+		TabelaProduktow = new JTable();
+		scrollPane.setViewportView(TabelaProduktow);
+		
+		TabelaPodgrup = new JTable();
+		scrollPane2.setViewportView(TabelaPodgrup);
+		
+		TabelaMarek = new JTable();
+		scrollPane3.setViewportView(TabelaMarek);
+		
+		TabelaGrup = new JTable();
+		scrollPane4.setViewportView(TabelaGrup);
+		
+		wpiszNazwe = new JTextField("");     //Nazwa
+		wpiszNazwe.setBounds(180,100,150,25);
+		add(wpiszNazwe);
+		
+		wpiszKraj = new JTextField("");    //Kraj
+		wpiszKraj.setBounds(180,150,150,25);
+		add(wpiszKraj);
+		
+		szukajMarki = new JTextField("");  
+		szukajMarki.setBounds(180,250,150,25);
+		add(szukajMarki);
+		/*
+		wpisz4 = new JTextField("");  
+		wpisz4.setBounds(180,250,150,25);
+		add(wpisz4);		
+		*/	
+		przycisk4 = new JButton("Wyjœcie");
+		przycisk4.setBounds(180,550,150,25);
+		add(przycisk4);
+		przycisk4.addActionListener(this);
+		
+		wyswietl = new JLabel("Wpisz nazwê marki:");
+		wyswietl.setBounds(50,100,150,25);
+		add(wyswietl);
+		
+		wyswietl2 = new JLabel("Wpisz kraj marki:");
+		wyswietl2.setBounds(50,100,150,125);
+		add(wyswietl2);
+		
+		wyswietl3 = new JLabel("Szukaj marki po:");
+		wyswietl3.setBounds(50,100,150,225);
+		add(wyswietl3);
+		
+		wyswietl4 = new JLabel("Wpisz co szukasz:");
+		wyswietl4.setBounds(50,100,150,325);
+		add(wyswietl4);
+		
+		
+		
+		
+		
+		DodajMarke = new JButton("Dodaj markê");	
+		DodajMarke.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Connection connection=null;
+				try {
+					connection = Polaczenie.dbConnector();
+					
+					if (connection!=null){
+					CallableStatement c = connection.prepareCall("{call DODAWANIEMARKI(?,?)}");					
+					
+					if (liczba(wpiszNazwe.getText()) == false) {
+						c.setString(1, wpiszNazwe.getText()); //		
+						} else {
+						JOptionPane.showMessageDialog(null, "Nazwa marki nie mo¿e byæ liczb¹", "B³¹d", JOptionPane.ERROR_MESSAGE);
+					} 
+					
+					
+					if (liczba(wpiszKraj.getText()) == false) {			
+					c.setString(2, wpiszKraj.getText()); //	
+					} else {
+						JOptionPane.showMessageDialog(null, "Kraj pochodzenia marki nie mo¿e byæ liczb¹", "B³¹d", JOptionPane.ERROR_MESSAGE);
+					} /*
+					if (liczba(wpisz3.getText()) == true) {
+					if (Integer.parseInt(wpisz3.getText())>0) {
+					c.setString(3, wpisz3.getText()); //Marka_ID_Marka		
+					} else {
+						JOptionPane.showMessageDialog(null, "ID_MARKI musi byæ wiêksza od 0.", "B³¹d", JOptionPane.ERROR_MESSAGE);
+					} } else {
+						JOptionPane.showMessageDialog(null, "ID_Marki musi byæ liczb¹", "B³¹d", JOptionPane.ERROR_MESSAGE);
+					}
+					
+					if (liczba(wpisz4.getText()) == false){
+						c.setString(4, wpisz4.getText()); //Nazwa
+					} else {
+						JOptionPane.showMessageDialog(null, "Nazwa produktu nie mo¿e byæ liczb¹.", "B³¹d", JOptionPane.ERROR_MESSAGE);
+					}
+					*/
+					
+				
+				
+					c.executeUpdate();
+					c.close();	
+					JOptionPane.showMessageDialog(Dodawanie.this, "Doda³eœ markê. Aby zobaczyæ lub odœwie¿yæ listê marek kliknij w przycisk 'Lista Marek'", "", JOptionPane.PLAIN_MESSAGE);
+					} 
+					else JOptionPane.showMessageDialog(Dodawanie.this, "Brak po³¹czenia");
+					
+				}
+				catch(SQLException e) {	
+					e.printStackTrace();
+					JOptionPane.showMessageDialog(Dodawanie.this, "Nie uda³o siê dodaæ marki");
+				}
+				finally { 
+					if (connection!=null) {
+						
+						try {
+							connection.close();
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+					
+						}
+						
+						
+					}
+				
+				}
+				
+			}
+			
+		} );
+		
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"ID_MARKA","NAZWA", "KRAJ"}));
+		comboBox.setBounds(180,200,150,25);
+		add(comboBox);
+		szukajMarki.addKeyListener(new KeyAdapter() {
+			public void keyReleased(KeyEvent arg0) {
+				Connection connection=null;
+				try {  		
+					connection = Polaczenie.dbConnector();
+					String tekst = (String) comboBox.getSelectedItem();
+					String zapytanie="SELECT ID_MARKA AS NUMER_MARKI, NAZWA, KRAJ FROM MARKA WHERE "+tekst+"=?";  
+					if(connection==null)JOptionPane.showMessageDialog(null, "A po³¹czenie nadal null!");
+					PreparedStatement p=connection.prepareStatement(zapytanie);
+					p.setString(1, szukajMarki.getText());
+					ResultSet rs = p.executeQuery();						
+					TabelaMarek.setModel(DbUtils.resultSetToTableModel(rs));				 
+					p.close(); 
+					}    
+					catch(Exception ex){  
+					ex.printStackTrace();
+					}				
+			}
+		});
+		
+		
+		
+		DodajMarke.setBounds(180,300,150,25);
+		add(DodajMarke);
+		
+		
+		przycisk = new JButton("Lista produktów");
+		przycisk.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		przycisk.addActionListener(new ActionListener() {
+			
+
+			public void actionPerformed(ActionEvent arg0) {
+			
+				try {
+				connection = Polaczenie.dbConnector();
+				if (connection!=null){
+				CallableStatement c = connection.prepareCall("{call PRODUKTY}"); 
+				ResultSet rs = c.executeQuery();
+			
+				TabelaProduktow.setModel(DbUtils.resultSetToTableModel(rs));
+				TabelaProduktow.setEnabled(false);
+			
+				rs.close();			
+				c.close();
+				
+				} else {
+					JOptionPane.showMessageDialog(null, "Brak po³¹czenia");
+				}
+			} catch(SQLException e) {	
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Nie uda³o siê wyœwietliæ produktów");
+			}
+			finally { 
+				if (connection!=null) {
+					try {
+						connection.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+								
+				}
+			}
+			}
+		});
+		przycisk.setBounds(180,350,150,25);
+		add(przycisk);
+	//	Produkty();
+		
+		
+		przycisk2 = new JButton("Lista podgrup");
+		przycisk2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		przycisk2.addActionListener(new ActionListener() {
+			
+
+			public void actionPerformed(ActionEvent arg0) {
+			
+				try {
+				connection = Polaczenie.dbConnector();
+				if (connection!=null){
+				CallableStatement c = connection.prepareCall("{call PODGRUPY}"); 
+				ResultSet rs = c.executeQuery();
+			
+				TabelaPodgrup.setModel(DbUtils.resultSetToTableModel(rs));
+				TabelaPodgrup.setEnabled(false);
+			
+				rs.close();			
+				c.close();
+				
+				} else {
+					JOptionPane.showMessageDialog(null, "Brak po³¹czenia");
+				}
+			} catch(SQLException e) {	
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Nie uda³o siê wyœwietliæ podgrup");
+			}
+			finally { 
+				if (connection!=null) {
+					try {
+						connection.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					
+				}
+			}
+			}
+		});
+		przycisk2.setBounds(180,400,150,25);
+		add(przycisk2);
+			
+		
+		przycisk3 = new JButton("Lista marek");
+		przycisk3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		przycisk3.addActionListener(new ActionListener() {
+			
+
+			public void actionPerformed(ActionEvent arg0) {
+			
+				try {
+				connection = Polaczenie.dbConnector();
+				if (connection!=null){
+				CallableStatement c = connection.prepareCall("{call MARKI}"); 
+				ResultSet rs = c.executeQuery();
+			
+				TabelaMarek.setModel(DbUtils.resultSetToTableModel(rs));
+				TabelaMarek.setEnabled(false);
+			
+				rs.close();			
+				c.close();
+				
+				} else {
+					JOptionPane.showMessageDialog(null, "Brak po³¹czenia");
+				}
+			} catch(SQLException e) {	
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Nie uda³o siê wyœwietliæ marek");
+			}
+			finally { 
+				if (connection!=null) {
+					try {
+						connection.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					
+				}
+			}
+			}
+		});
+		przycisk3.setBounds(180,450,150,25);
+		add(przycisk3);
+		
+		przycisk5 = new JButton("Lista grup");
+		przycisk5.setBounds(180,500,150,25);
+		add(przycisk5);
+		
+		
+		
+		przycisk5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		przycisk5.addActionListener(new ActionListener() {
+			
+
+			public void actionPerformed(ActionEvent arg0) {
+			
+				try {
+				connection = Polaczenie.dbConnector();
+				if (connection!=null){
+				CallableStatement c = connection.prepareCall("{call GRUPY}"); 
+				ResultSet rs = c.executeQuery();
+			
+				TabelaGrup.setModel(DbUtils.resultSetToTableModel(rs));
+				TabelaGrup.setEnabled(false);
+			
+				rs.close();			
+				c.close();
+				
+				} else {
+					JOptionPane.showMessageDialog(null, "Brak po³¹czenia");
+				}
+			} catch(SQLException e) {	
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Nie uda³o siê wyœwietliæ grup");
+			}
+			finally { 
+				if (connection!=null) {
+					try {
+						connection.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					
+				}
+			}
+			}
+		});
+		przycisk5.setBounds(180,500,150,25);
+		add(przycisk5);
+	
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object o = e.getSource();
+		if (o==przycisk4) {
+			dispose();
+		}
+	}
+	
+	
+	private static Connection dbConnector()  {
+		  
+		  try{ 
+		  Class.forName( "org.firebirdsql.jdbc.FBDriver"); 
+		  Connection conn = DriverManager.getConnection(
+		  "jdbc:firebirdsql://localhost:3050/C:/Users/Nikodem/Desktop/BazaDanych/BAZA222.GDB",
+		  "sysdba", "masterkey"); 
+		 
+		  return conn;
+		  
+		  } catch (ClassNotFoundException e) { 
+			 JOptionPane.showMessageDialog(null, e);
+		     return null; 
+		  }
+		  catch(SQLException e){
+			  return null;
+		  }
+		
+		  }
+
+	
+}
