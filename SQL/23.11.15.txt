@@ -1,0 +1,23 @@
+Zad 1 lista nr 4
+SELECT FIRST_NAME, LAST_NAME, d.dept_no,d.department
+FROM employee e JOIN department d
+on (e.dept_no=d.dept_no)
+
+Zad 2 lista nr 4
+SELECT FIRST_NAME, LAST_NAME, JOB_COUNTRY, d.dept_no,d.department
+FROM employee e JOIN department d on (e.dept_no=d.dept_no)
+where job_country='USA'
+
+Zad 3 lista nr 4
+SELECT d.full_name, d.dept_no
+FROM employee e JOIN employee d ON(e.dept_no=d.dept_no)
+WHERE e.full_name='Nelson, Robert'
+
+Zad 4 lista nr 4
+SELECT d.department, min(e.salary), max(e.salary), avg(e.salary), sum(e.salary), count(emp_no)
+FROM department d left JOIN employee e ON(d.dept_no=e.dept_no)
+GROUP BY d.dept_no,1
+
+Zad 5 lista nr 4 (nie wiem czy dobrze)
+SELECT p.proj_name, e.full_name
+FROM project p JOIN employee e ON(e.EMP_NO = p.team_leader)

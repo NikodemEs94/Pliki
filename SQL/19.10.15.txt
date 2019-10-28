@@ -1,0 +1,52 @@
+Zad 4 lista nr 2
+SELECT COUNT(*)
+FROM employee
+WHERE PHONE_EXT IS NULL
+
+Zad 5 lista nr 2
+SELECT COUNT(*)
+FROM employee
+WHERE JOB_CODE='Mngr' AND Salary>=60000
+
+Zad 6 lista nr 2
+SELECT COUNT(DISTINCT JOB_COUNTRY)
+FROM employee
+WHERE JOB_COUNTRY IS NOT NULL
+
+Zad 7 lista nr 2
+SELECT *
+FROM employee
+WHERE JOB_COUNTRY='USA'
+ORDER BY LAST_NAME, salary
+
+Zad 8 lista nr 2
+SELECT COUNT(*),
+SUM(SALARY)
+FROM employee
+WHERE JOB_COUNTRY='USA'
+
+Zad 9 lista nr 2
+SELECT SUM(SALARY), job_country
+FROM employee  
+GROUP BY job_country
+ORDER BY SUM(SALARY) 
+
+Zad 10 lista nr 2
+SELECT SUM(SALARY), COUNT(*),job_country
+FROM employee
+GROUP BY job_country
+HAVING COUNT(*)>2
+ORDER BY SUM(SALARY) 
+
+Zad 11 lista nr 2
+SELECT COUNT(DISTINCT SALARY),job_country
+FROM employee
+WHERE SALARY IS NOT NULL
+GROUP BY job_country
+
+Zad 12 lista nr 2
+SELECT COUNT(*),first_name
+FROM employee
+GROUP BY first_name
+
+Zad 13 lista nr 2

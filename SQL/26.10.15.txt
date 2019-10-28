@@ -1,0 +1,61 @@
+http://www.firebirdsql.org/file/documentation/reference_manuals/reference_material/html/langrefupd25.html <- przydatny link
+
+EXTRACT (<part> FROM <datetime>)
+
+<part>      ::=  YEAR | MONTH | WEEK
+                   | DAY | WEEKDAY | YEARDAY
+                   | HOUR | MINUTE | SECOND | MILLISECOND
+<datetime>  ::=  a DATE, TIME or TIMESTAMP expression
+Przyk³ad:
+
+SELECT EXTRACT (YEAR FROM CURRENT_DATE)
+FROM RDB$DATABASE
+
+SELECT EXTRACT (MONTH FROM Hire_date), full_name
+FROM employee
+
+SELECT EXTRACT (MONTH FROM Hire_date) as "Miesi¹c", full_name, 
+EXTRACT (DAY FROM Hire_date) as "dzieñ"
+FROM employee
+
+
+
+Part	Type	Range	Comment
+YEAR	SMALLINT	1–9999	 
+MONTH	SMALLINT	1–12	 
+WEEK	SMALLINT	1–53	 
+DAY	SMALLINT	1–31	 
+WEEKDAY	SMALLINT	0–6	0 = Sunday
+YEARDAY	SMALLINT	0–365	0 = January 1
+HOUR	SMALLINT	0–23	 
+MINUTE	SMALLINT	0–59	 
+SECOND	NUMERIC(9,4)	0.0000–59.9999	includes millisecond as fraction
+MILLISECOND	NUMERIC(9,1)	0.0–999.9	broken in 2.1, 2.1.1
+
+Zad 16 lista nr 2
+SELECT EXTRACT (MONTH FROM Hire_date) as "miesi¹c", full_name
+FROM employee
+WHERE EXTRACT (MONTH FROM Hire_date)=12
+
+Zad 19 lista nr 2
+select  first_name  || '  ' ||  last_name  || '  ' ||  cast  (salary as char(15)) "dane"
+from employee
+
+Zad 20 lista nr 2
+select full_name as "nazwa"  ,job_code
+from employee
+WHERE LOWER(JOB_CODE)='mngr'
+
+select full_name as "nazwa" , job_code
+from employee
+WHERE UPPER(JOB_CODE)='MNGR'
+
+Zad 1 lista nr 3
+select
+min(SALARY),max(SALARY),avg(SALARY)
+from employee
+
+Zad 2 lista nr 3
+select  first_name, last_name, salary
+from employee
+where salary=(select MIN(SALARY) from employee ) or salary=(select MAX(SALARY) from employee )

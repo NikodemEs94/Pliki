@@ -1,0 +1,38 @@
+Zad 7 lista nr 4
+SELECT e1.emp_no, e1.FULL_NAME, e1.SALARY, sum(e2.salary), avg(e2.salary), max(e2.salary), min(e2.salary)
+FROM EMPLOYEE e1 JOIN employee e2 ON(e1.dept_no = e2.dept_no)
+GROUP BY e1.EMP_NO, e1.FULL_NAME, e1.salary
+
+Zad 8 lista nr 4
+SELECT e1.emp_no, e1.FULL_NAME, e1.SALARY, sum(e2.salary), e1.salary/SUM(e2.salary)*100 as procent
+FROM EMPLOYEE e1 JOIN employee e2 ON(e1.dept_no = e2.dept_no)
+GROUP BY e1.EMP_NO, e1.FULL_NAME, e1.salary
+
+Zad 9 lista nr 4
+SELECT e1.emp_no, e1.FULL_NAME, e1.SALARY, sum(e2.salary), e1.salary/SUM(e2.salary)*100 as procent
+FROM EMPLOYEE e1 JOIN employee e2 ON(e1.dept_no = e2.dept_no)
+GROUP BY e1.EMP_NO, e1.FULL_NAME, e1.salary
+HAVING e1.salary/sum(e2.salary)*100 >= all(SELECT e1.salary/SUM(e2.salary)*100 FROM EMPLOYEE e1 JOIN employee e2 ON(e1.dept_no = e2.dept_no) GROUP BY e1.EMP_NO, e1.FULL_NAME, e1.salary)
+
+Zad 9* lista nr 4
+SELECT e1.emp_no, e1.FULL_NAME, e1.SALARY, sum(e2.salary), e1.salary/SUM(e2.salary)*100 as procent
+FROM EMPLOYEE e1 JOIN employee e2 ON(e1.dept_no = e2.dept_no)
+GROUP BY e1.EMP_NO, e1.FULL_NAME, e1.salary
+HAVING count(*)>1 and e1.salary/sum(e2.salary)*100 >= all(SELECT e1.salary/SUM(e2.salary)*100 FROM EMPLOYEE e1 JOIN employee e2 ON(e1.dept_no = e2.dept_no) GROUP BY e1.EMP_NO, e1.FULL_NAME, e1.salary HAVING count(*)>1)
+
+Zad 10 lista nr 4
+SELECT e1.dept_no, e2.DEPARTMENT, sum(e1.salary) as wyplata, e2.budget-sum(e1.salary) as roznica
+FROM EMPLOYEE e1 right JOIN department e2 ON(e1.dept_no = e2.dept_no)
+GROUP BY e2.department, e1.DEPT_NO
+
+Zad 11 lista nr 4
+SELECT e2.dept_no, e2.DEPARTMENT, count(distinct e1.JOB_COUNTRY)
+FROM EMPLOYEE e1 right JOIN department e2 ON(e1.dept_no = e2.dept_no)
+GROUP BY e2.DEPARTMENT, e2.dept_no
+
+Zad 12 lista nr 4 POPRAWIÆ
+SELECT d.dept_no, d.DEPARTMENT, e.JOB_CODE, sum(e.salary)
+FROM EMPLOYEE e right JOIN department d ON(d.dept_no = e.dept_no)
+Where job_code='Mngr'
+GROUP BY d.dept_no, d.DEPARTMENT, e.job_code
+

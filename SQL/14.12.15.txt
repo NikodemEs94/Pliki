@@ -1,0 +1,98 @@
+ZADANIA Z WIDOKAMI
+
+Zad 8 lista nr 6
+CREATE OR ALTER VIEW osoby_usa(
+   Zarobki
+    )
+AS
+SELECT sum(SALARY)
+FROM employee
+WHERE JOB_COUNTRY='USA'
+;
+
+CREATE OR ALTER VIEW OSOBY_NIE_Z_USA(
+    ZAROBKI)
+AS
+SELECT sum(SALARY)
+FROM employee
+WHERE JOB_COUNTRY!='USA'
+;
+
+
+
+Zad 9 lista nr 6
+
+CREATE OR ALTER VIEW ZAD9(
+    DEPT_NO,
+    ILE,
+    SREDNIE)
+AS
+SELECT dept_no, count(*) as ile, avg(SALARY) as srednie
+FROM employee
+Group by dept_no
+;
+
+Select dept_no, ile
+FROM Zad9
+where ile=(select max(ile) from zad9)
+
+Zad 10 lista nr 6
+
+CREATE OR ALTER VIEW ZAD10(
+    DEPT_NO,
+    ILE,
+    SREDNIE)
+AS
+SELECT dept_no, count(*) as ile, avg(SALARY) as srednie
+FROM employee
+Group by dept_no
+;
+
+Select dept_no, srednie
+FROM Zad10
+where srednie=(select max(srednie) from zad9)
+
+Zad 11 lista nr 6
+
+CREATE OR ALTER VIEW ZAD11(
+    FULL_NAME)
+AS
+SELECT full_name
+FROM employee e join project f on (e.emp_no=f.team_leader)
+;
+
+SELECT *
+FROM zad11
+WHERE team_leader=(select max(team_leader) from zad11)
+
+Zad 12 lista nr 6
+
+CREATE OR ALTER VIEW ZAD12(
+    EMP_NO,
+    FIRST_NAME,
+    SALARY,
+    DEPT_NO)
+AS
+SELECT e.emp_no, e.first_name, e.salary, f.dept_no
+FROM employee e join department f on(e.emp_no=f.mngr_no)
+;
+
+SELECT *
+FROM zad12 f
+WHERE SALARY<any(select salary from employee e where e.dept_no=f.dept_no)
+
+Zad 13 lista nr 6
+
+CREATE OR ALTER VIEW ZAD13(
+    EMP_NO,
+    FIRST_NAME,
+    SALARY,
+    DEPT_NO)
+AS
+SELECT e.emp_no, e.first_name, e.salary, f.dept_no
+FROM employee e join department f on(e.emp_no=f.mngr_no)
+;
+
+SELECT * // poprawic!
+FROM zad12 f left join employee e on(f.dept_no=e.dept_no and f.first_name!=e.first_name)
+group by f.salary, f.dept_no, first_name

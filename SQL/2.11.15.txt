@@ -1,0 +1,41 @@
+Zad 3 lista nr 3
+select *
+from employee
+where hire_date = (SELECT min(hire_date) from employee) or hire_date =(SELECT max(hire_date) from employee)
+
+Bez min i max:
+
+select *
+from employee
+where hire_date <= all(SELECT (hire_date) from employee) or hire_date >= all(SELECT (hire_date) from employee)
+
+Zad 4 lista nr 3
+select *
+from employee
+where dept_no =
+
+(SELECT dept_no
+FROM employee
+WHERE LAST_NAME='Nelson' AND FIRST_NAME='Robert'    )
+
+Zad 5 lista nr 3
+SELECT dept_no, avg(SALARY)
+FROM employee
+GROUP BY DEPT_NO
+
+Zad 6 lista nr 3
+select first_name, last_name, salary
+from employee
+WHERE salary > (SELECT avg(SALARY) FROM employee)
+
+Zad 7 lista nr 3
+select *
+from employee
+WHERE DEPT_NO = '623' and salary > (SELECT AVG(salary) from employee WHERE DEPT_NO = '623')
+
+Zad 8 lista nr 3
+select dept_no, avg(salary)
+from employee
+group by dept_no
+having avg(salary)>100000
+order by avg(salary)

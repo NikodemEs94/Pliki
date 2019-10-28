@@ -1,0 +1,29 @@
+Zad 9 lista nr 3
+select dept_no, avg(salary)
+from employee
+where job_country='USA'
+group by dept_no
+having avg(salary)>100000
+order by avg(salary)
+
+Zad 10 lista nr 3
+select full_name, dept_no, salary
+from employee e1
+where salary = (select min(salary) from employee e2 where e2.dept_no = e1.dept_no)
+
+Zad 11 lista nr 3
+select dept_no , count(*)
+from employee
+group by dept_no
+having count(dept_no)>4
+
+Zad 12 lista nr 3
+SPOSÓB Z COUNT:
+
+select dept_no, count(*)
+from employee
+where salary>100000
+GROUP BY dept_no
+having count(*)=1
+
+SPOSÓB Z EXISTS

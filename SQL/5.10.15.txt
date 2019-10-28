@@ -1,0 +1,114 @@
+ Statement #1
+-------------------------------------------------------------
+SELECT * from employee
+
+
+Statement #2
+-------------------------------------------------------------
+SELECT first_name, last_name, salary
+FROM employee
+
+
+Statement #3
+-------------------------------------------------------------
+SELECT first_name, last_name, salary
+FROM employee
+WHERE salary IS NULL
+
+
+Statement #4
+-------------------------------------------------------------
+SELECT DISTINCT job_country
+ FROM employee
+
+
+Statement #5
+-------------------------------------------------------------
+SELECT job_country
+FROM employee
+
+
+Statement #6
+-------------------------------------------------------------
+SELECT Distinct job_country
+FROM employee
+
+
+Statement #7
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE salary<=2000 AND dept_no='000'
+
+
+Statement #8
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE salary<=2000 AND DEPT_NO='000'
+
+
+Statement #9
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE hire_date='12.25.2000'
+
+
+Statement #10
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE hire_date='01.06.2000'
+
+
+Statement #11
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE hire_date='01.06.1992'
+
+
+Statement #12
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE hire_date<='15.01.1990'
+
+
+Statement #13
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE hire_date>='15.01.1990'
+
+
+Statement #14
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE salary>=10000 and salary<=50000
+
+
+Statement #15
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE salary= 10000
+
+
+Statement #16
+-------------------------------------------------------------
+SELECT * FROM employee
+WHERE salary= 44000
+
+
+Statement #17
+-------------------------------------------------------------
+SELECT * FROM employee
+ORDER BY salary DESC, last_name, first_name
+
+
+Statement #18
+-------------------------------------------------------------
+SELECT * FROM employee
+ORDER BY salary DESC, last_name, first_name DESC
+
+
+Statement #19
+-------------------------------------------------------------
+SELECT * FROM employee
+ORDER BY salary DESC, last_name DESC, first_name DESC
+
+

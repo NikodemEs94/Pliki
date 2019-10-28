@@ -1,0 +1,48 @@
+Zad 13 lista nr 4
+
+SELECT DEPARTMENT, d.dept_no, count(emp_no), extract(year from hire_date)
+FROM department d left join employee e ON(e.dept_no = d.dept_no)
+GROUP BY 1,2,4 -- liczby oznaczaj¹ odwolania do SELECT, np 1 to department, 2 to d.dept_no, 4 to extract(year from hire_date)
+
+Zad 14 lista nr 4 a)
+
+SELECT e.full_name, e.emp_no, e.salary, count(d.emp_no)
+FROM EMPLOYEE e left JOIN employee d ON(e.salary < d.salary)
+GROUP BY e.emp_no, e.salary, e.full_name, e.dept_no
+
+Zad 14 lista nr 4 b)
+
+SELECT e.full_name, e.emp_no, e.salary, count(d.emp_no)
+FROM EMPLOYEE e left JOIN employee d ON(e.salary < d.salary AND e.dept_no=d.dept_no)
+GROUP BY e.emp_no, e.salary, e.full_name, e.dept_no
+
+Zad 3 lista nr 6
+
+SELECT full_name
+FROM employee
+Where last_name like '%-%' or last_name like '% %'
+
+Zad 5 lista nr 6
+
+SELECT *
+FROM country
+Where currency like '%Dollar%'
+
+Zad 6 lista nr 6
+
+SELECT *
+FROM employee
+Where Phone_ext is null
+
+Zad 7 lista nr 6
+
+SELECT  e.department, e.dept_no
+FROM department e left JOIN  department d on (e.dept_no=d.head_dept)
+WHere d.dept_no is null
+
+Drugi sposób w zad 7:
+
+SELECT  e.department, e.dept_no
+FROM department e left JOIN  department d on (e.dept_no=d.head_dept)
+group by e.department, e.dept_no
+Having count(d.dept_no)=0

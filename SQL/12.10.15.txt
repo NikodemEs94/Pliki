@@ -1,0 +1,45 @@
+select last_name, salary, job_country
+FROM employee
+ORDER by 3,2 DESC
+
+SELECT *
+from employee
+ORDER by 3 desc, 6
+
+SELECT  last_name,  first_name
+from employee
+ORDER BY 1,2
+
+Zad 9 lista nr 1 
+SELECT last_name, salary, first_name
+from employee
+ORDER BY salary DESC
+
+Zad 11 lista nr 1
+SELECT *
+from employee
+WHERE DEPT_NO='000'
+ORDER BY  salary  desc, hire_date desc
+
+Zad 12 lista nr 1
+SELECT *
+from employee
+WHERE hire_date>='1.01.1990' and hire_date<='31.12.1992'
+
+Zad 13 lista nr 1
+SELECT *
+from employee
+WHERE DEPT_NO IN ('000','100','115') and salary>='100000'
+Metod¹ z OR:
+SELECT *
+from employee
+WHERE (DEPT_NO='000' OR DEPT_NO='100' OR DEPT_NO='115') and salary>=100000
+
+Zad 3 lista nr 2
+SELECT COUNT(DISTINCT first_name)
+FROM employee
+WHERE first_name STARTING WITH 'R'
+Aby wypisaæ te imiona zaczynaj¹ce siê na R:
+SELECT *
+FROM employee
+WHERE first_name STARTING WITH 'R'
