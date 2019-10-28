@@ -1,0 +1,13 @@
+def obroc(A,K):
+    if A==[]:
+        return A
+    else:
+        for i in range(0,K):    
+            wart = A[len(A)-1]
+            A.pop()
+            A.insert(0, wart)
+        return A
+
+A = [4,7,2,3,7,8,4,999]
+K = 3
+print(obroc(A,K))

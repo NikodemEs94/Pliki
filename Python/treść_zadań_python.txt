@@ -1,0 +1,144 @@
+ZAD 1
+Binarny szczeliny w dodatniej liczby ca³kowitej N jest dowoln¹ iloœæ sekwencji kolejnych zer, który jest otoczony przez te, które na obu koñcach w binarnej reprezentacji N.
+
+Na przyk³ad liczba 9 ma reprezentacjê binarn¹ 1001 i zawiera binarn¹ przerwê o d³ugoœci 2. Liczba 529 ma reprezentacjê binarn¹ 1000010001 i zawiera dwie przerwy binarne: jedn¹ o d³ugoœci 4 i jedn¹ o d³ugoœci 3. Liczba 20 ma reprezentacjê binarn¹ 10100 i zawiera jedna binarna przerwa o d³ugoœci 1. Liczba 15 ma reprezentacjê binarn¹ 1111 i nie ma binarnych przerw. Liczba 32 ma reprezentacjê binarn¹ 100000 i nie ma luk binarnych.
+
+Napisz funkcjê:
+
+rozwi¹zanie def (N)
+
+¿e przy dodatniej liczbie ca³kowitej N zwraca d³ugoœæ najd³u¿szej szczeliny binarnej. Funkcja powinna zwróciæ 0, jeœli N nie zawiera przerwy binarnej.
+
+Na przyk³ad, bior¹c pod uwagê N = 1041, funkcja powinna zwróciæ 5, poniewa¿ N ma reprezentacjê binarn¹ 10000010001, a zatem jej najd³u¿sza przerwa binarna ma d³ugoœæ 5. Bior¹c pod uwagê N = 32, funkcja powinna zwróciæ 0, poniewa¿ N ma reprezentacjê binarn¹ „100000”, a zatem brak luk binarnych.
+
+Napisz skuteczny algorytm dla nastêpuj¹cych za³o¿eñ:
+
+N jest liczb¹ ca³kowit¹ w zakresie [ 1 .. 2 147 483 647 ].
+
+
+ZAD 2
+
+Napisz funkcjê:
+
+rozwi¹zanie def (A)
+
+¿e, bior¹c pod uwagê tablicê A liczb ca³kowitych N, zwraca najmniejsz¹ dodatni¹ liczbê ca³kowit¹ (wiêksz¹ ni¿ 0), która nie wystêpuje w A.
+
+Na przyk³ad, bior¹c pod uwagê A = [1, 3, 6, 4, 1, 2], funkcja powinna zwróciæ 5.
+
+Bior¹c pod uwagê A = [1, 2, 3], funkcja powinna zwróciæ 4.
+
+Bior¹c pod uwagê A = [-1, -3], funkcja powinna zwróciæ 1.
+
+Napisz skuteczny algorytm dla nastêpuj¹cych za³o¿eñ:
+
+N jest liczb¹ ca³kowit¹ w zakresie [ 1 .. 100 000 ];
+ka¿dy element tablicy A jest liczb¹ ca³kowit¹ z zakresu [ -1 000 000 .. 1 000 000 ].
+
+
+
+ZAD 3:
+
+Podana jest niepusta tablica A sk³adaj¹ca siê z N liczb ca³kowitych. Tablica zawiera nieparzyst¹ liczbê elementów, a ka¿dy element tablicy mo¿na sparowaæ z innym elementem o tej samej wartoœci, z wyj¹tkiem jednego elementu, który nie jest sparowany.
+
+Na przyk³ad w tablicy A takiej, ¿e:
+
+  A [0] = 9 A [1] = 3 A [2] = 9
+  A [3] = 3 A [4] = 9 A [5] = 7
+  A [6] = 9
+elementy o indeksach 0 i 2 maj¹ wartoœæ 9,
+elementy o indeksach 1 i 3 maj¹ wartoœæ 3,
+elementy o indeksach 4 i 6 maj¹ wartoœæ 9,
+element o indeksie 5 ma wartoœæ 7 i nie jest sparowany.
+Napisz funkcjê:
+
+class Solution {public int solution (int [] A); }
+
+¿e, bior¹c pod uwagê tablicê A sk³adaj¹c¹ siê z N liczb ca³kowitych spe³niaj¹cych powy¿sze warunki, zwraca wartoœæ niesparowanego elementu.
+
+Na przyk³ad podana tablica A taka, ¿e:
+
+  A [0] = 9 A [1] = 3 A [2] = 9
+  A [3] = 3 A [4] = 9 A [5] = 7
+  A [6] = 9
+funkcja powinna zwróciæ 7, jak wyjaœniono w powy¿szym przyk³adzie.
+
+Napisz skuteczny algorytm dla nastêpuj¹cych za³o¿eñ:
+
+N jest nieparzyst¹ liczb¹ ca³kowit¹ w zakresie [1..1 000 000];
+ka¿dy element tablicy A jest liczb¹ ca³kowit¹ z zakresu [ 1 .. 1 000 000 000 ];
+wszystkie oprócz jednej wartoœci w A wystêpuj¹ parzyst¹ liczbê razy.
+
+
+
+ZAD 4
+
+
+
+Podana jest tablica A sk³adaj¹ca siê z N liczb ca³kowitych. Obrót tablicy oznacza, ¿e ??ka¿dy element jest przesuniêty w prawo o jeden indeks, a ostatni element tablicy jest przenoszony na pierwsze miejsce. Na przyk³ad obrót tablicy A = [3, 8, 9, 7, 6] wynosi [6, 3, 8, 9, 7] (elementy s¹ przesuwane w prawo o jeden indeks, a 6 jest przenoszony na pierwsze miejsce).
+
+Celem jest obrócenie tablicy A K razy; to znaczy, ka¿dy element A zostanie przesuniêty do w³aœciwych czasów K.
+
+Napisz funkcjê:
+
+rozwi¹zanie def (A, K)
+
+¿e, bior¹c pod uwagê tablicê A sk³adaj¹c¹ siê z N liczb ca³kowitych i liczby ca³kowitej K, zwraca tablicê A obrócon¹ K razy.
+
+Na przyk³ad dane
+
+    A = [3, 8, 9, 7, 6]
+    K = 3
+funkcja powinna zwróciæ [9, 7, 6, 3, 8]. Wykonano trzy obroty:
+
+    [3, 8, 9, 7, 6] -> [6, 3, 8, 9, 7]
+    [6, 3, 8, 9, 7] -> [7, 6, 3, 8, 9]
+    [7, 6, 3, 8, 9] -> [9, 7, 6, 3, 8]
+Podany inny przyk³ad
+
+    A = [0, 0, 0]
+    K = 1
+funkcja powinna zwróciæ [0, 0, 0]
+
+Dany
+
+    A = [1, 2, 3, 4]
+    K = 4
+funkcja powinna zwróciæ [1, 2, 3, 4]
+
+Zak³adaæ, ¿e:
+
+N i K s¹ liczbami ca³kowitymi w zakresie [0..100];
+ka¿dy element tablicy A jest liczb¹ ca³kowit¹ z zakresu [-1 000..1,000].
+W swoim rozwi¹zaniu skup siê na poprawnoœci. Ocena Twojego rozwi¹zania nie bêdzie przedmiotem oceny.
+
+
+
+ZAD 5
+
+
+Ma³a ¿aba chce przedostaæ siê na drug¹ stronê drogi. ¯aba znajduje siê obecnie w pozycji X i chce dotrzeæ do pozycji wiêkszej lub równej Y. Ma³a ¿aba zawsze skacze na ustalon¹ odleg³oœæ, D.
+
+Policz minimaln¹ liczbê skoków, które musi wykonaæ ma³a ¿aba, aby osi¹gn¹æ swój cel.
+
+Napisz funkcjê:
+
+rozwi¹zanie def (X, Y, D)
+
+¿e przy trzech liczbach ca³kowitych X, Y i D zwraca minimaln¹ liczbê skoków z pozycji X do pozycji równej lub wiêkszej ni¿ Y.
+
+Na przyk³ad bior¹c pod uwagê:
+
+   X = 10
+   Y = 85
+   D = 30
+funkcja powinna zwróciæ 3, poniewa¿ ¿aba zostanie ustawiona w nastêpuj¹cy sposób:
+
+po pierwszym skoku, w pozycji 10 + 30 = 40
+po drugim skoku, w pozycji 10 + 30 + 30 = 70
+po trzecim skoku w pozycji 10 + 30 + 30 + 30 = 100
+Napisz skuteczny algorytm dla nastêpuj¹cych za³o¿eñ:
+
+X, Y i D s¹ liczbami ca³kowitymi z zakresu [1..1 000 000 000];
+X ? Y.
+

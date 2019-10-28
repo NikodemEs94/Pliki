@@ -1,0 +1,13 @@
+def sprawdz(A):
+    A = [i for i in A if i > 0]
+    if A == []:
+        return 1
+    else:
+        el=min(A)
+        if 1 in A:
+            while el in A:
+                el+=1
+            return el
+        else:
+            return 1
+print(sprawdz([4,8,7,2,1,3,-3]))
