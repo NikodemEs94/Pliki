@@ -1,0 +1,22 @@
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.exe
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.deps.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.runtimeconfig.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.runtimeconfig.dev.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.dll
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.pdb
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.csprojAssemblyReference.cache
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.AssemblyInfoInputs.cache
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.AssemblyInfo.cs
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.dll
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.pdb
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.exe
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.deps.json
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.runtimeconfig.json
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.runtimeconfig.dev.json
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.dll
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\bin\Debug\netcoreapp3.0\Projekt_drugi.pdb
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.csprojAssemblyReference.cache
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.AssemblyInfoInputs.cache
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.AssemblyInfo.cs
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.dll
+C:\Users\Nikodem\Desktop\Pliki\C#\Projekt_drugi_rozw\Projekt_drugi\obj\Debug\netcoreapp3.0\Projekt_drugi.pdb

@@ -1,0 +1,11 @@
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\bin\Debug\netcoreapp3.0\Kolejna_lekcja.exe
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\bin\Debug\netcoreapp3.0\Kolejna_lekcja.deps.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\bin\Debug\netcoreapp3.0\Kolejna_lekcja.runtimeconfig.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\bin\Debug\netcoreapp3.0\Kolejna_lekcja.runtimeconfig.dev.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\bin\Debug\netcoreapp3.0\Kolejna_lekcja.dll
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\bin\Debug\netcoreapp3.0\Kolejna_lekcja.pdb
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\obj\Debug\netcoreapp3.0\Kolejna_lekcja.csprojAssemblyReference.cache
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\obj\Debug\netcoreapp3.0\Kolejna_lekcja.AssemblyInfoInputs.cache
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\obj\Debug\netcoreapp3.0\Kolejna_lekcja.AssemblyInfo.cs
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\obj\Debug\netcoreapp3.0\Kolejna_lekcja.dll
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Uruchom\Kolejna_lekcja\obj\Debug\netcoreapp3.0\Kolejna_lekcja.pdb

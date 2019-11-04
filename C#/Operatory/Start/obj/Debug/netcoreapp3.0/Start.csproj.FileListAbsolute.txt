@@ -1,0 +1,10 @@
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\bin\Debug\netcoreapp3.0\Start.exe
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\bin\Debug\netcoreapp3.0\Start.deps.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\bin\Debug\netcoreapp3.0\Start.runtimeconfig.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\bin\Debug\netcoreapp3.0\Start.runtimeconfig.dev.json
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\bin\Debug\netcoreapp3.0\Start.dll
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\bin\Debug\netcoreapp3.0\Start.pdb
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\obj\Debug\netcoreapp3.0\Start.AssemblyInfoInputs.cache
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\obj\Debug\netcoreapp3.0\Start.AssemblyInfo.cs
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\obj\Debug\netcoreapp3.0\Start.dll
+C:\Users\Nikodem\Desktop\Pliki\C Sharp, C#\Operatory\Start\obj\Debug\netcoreapp3.0\Start.pdb
